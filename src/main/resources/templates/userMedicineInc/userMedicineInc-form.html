@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layoutuser}">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <title>Editar la incompatibilidad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <!-- Template Main CSS Files -->
+  <link th:href="@{/css/variables.css}" rel="stylesheet">
+  <link th:href="@{/css/main2.css}" rel="stylesheet">
+  <link th:href="@{/css/estilos.css}" rel="stylesheet">
+
+</head>
+<body>
+<div layout:fragment="cabecera"><div class="container" style="padding-top:20px"><h3>Añade una nueva incompatibilidad</h3></div></div>
+<div layout:fragment="contenido">
+  <div class="container">
+
+
+      <form th:action="@{/usumedicamentosinc/save}" th:object="${medicineInc}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{userToMedicineInc}">
+        <div class="form-group">
+          <label>Medicamento:</label>
+          <select multiple="true" name="preguntas" class="form-select" id="preguntas" th:field="*{medicine}">
+            <option th:each="medicine : ${allMedicines}"
+                    th:value="${medicine.name}"
+                    th:text="${medicine.name}"
+            >
+            </option>
+          </select>
+
+        </div>
+        <div class="form-group">
+          <label>Motivo:</label>
+          <input class="form-control" type="text" th:field="*{reason}">
+          <br>
+        </div>
+        <div class="form-group">
+        <label for="activo">Activo:</label>
+        <select id="activo" class="form-select" name="activo" th:field="*{active}">
+          <option value="true">Sí</option>
+          <option value="false">No</option>
+        </select>
+        <br>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-success">Guardar</button>
+          <a th:href="@{/usuario/incompatibilidades}" class="btn btn-outline-secondary">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

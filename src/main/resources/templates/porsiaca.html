@@ -1,0 +1,137 @@
+
+<html th:lang="#{principal.lang}" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+  <meta th:charset="#{principal.charset}">
+  <title th:text="#{principal.title}"></title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link th:href="@{/img/favicon.png}" rel="icon">
+  <link th:href="@{/img/apple-touch-icon.png}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor/glightbox/css/glightbox.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor/aos/aos.css}" rel="styleshee}t">
+
+  <!-- Template Main CSS Files -->
+  <link th:href="@{/css/variables.css}" rel="stylesheet">
+  <link th:href="@{/css/main.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    <nav class="navbar navbar-expand-lg " aria-label="Fifth navbar example">
+      <div class="container-fluid">
+        <a th:href="@{/}" class="logo d-flex align-items-center">
+          <img src="/img/logo.png" alt="FeelingCare Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class=" nav-item dropdown" style="font-family:century gothic black"><a href="#"><span>Medicamentos</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item"><a th:href="@{/medicamentos}">Catálogo</a></li>
+                <li class="dropdown-item"><a  th:href="@{/incompatibles}">Incompatibilidades</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown"><a href="#"><span>Información de interés</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+              <ul  class="dropdown-menu">
+                <li  class="dropdown-item"><a th:href="@{/noticias}">Noticias del día</a></li>
+                <li  class="dropdown-item"><a th:href="@{/hospitalescercanos}">Hospitales cercanos</a></li>
+                <li  class="dropdown-item"><a th:href="@{/consejos}">Consejos para dejar de fumar</a></li>
+              </ul>
+            </li>
+            <li  class="nav-item"><a th:href="@{/aboutus}">About Us</a></li>
+            <li class="nav-item"><a th:href="@{/contacto}">Contacto</a></li>
+            <li class="nav-item dropdown"><a href="#"><span>Usuario</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+              <ul class="dropdown-menu">
+                <li  class="dropdown-item"><a th:href="@{/login}">Inicio Sesión</a></li>
+                <li  class="dropdown-item"><a th:href="@{/usuario/new}">Registro</a></li>
+              </ul>
+            </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </div>
+
+  </header><!-- End Header -->
+
+
+    <div class="container-xxl py-5">
+      <!-- Aqui vamos a escribir las cabeceras de los bloques  -->
+      <section class="container" layout:fragment="cabecera"> </section>
+      <!-- Aqui vamos a escribir el contenido de los bloques  -->
+      <section class="container" layout:fragment="contenido"> </section>
+    </div>
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content">
+      <div class="container">
+
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <h3 class="footer-heading">Sobre FeelingCare</h3>
+            <img src="/img/logo2.0.png">
+            <p>FeelingCare es tu asistente personal para el control de tus medicamentos.</p>
+            <p><a href="about.html" class="footer-link-more">Conoce al Equipo</a></p>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">Información de Interés</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href="index.html"><i class="bi bi-chevron-right"></i> Números de Emergencia</a></li>
+              <li><a href="index.html"><i class="bi bi-chevron-right"></i> Primeros Auxilios</a></li>
+              <li><a href="category.html"><i class="bi bi-chevron-right"></i> Hospitales Cercanos</a></li>
+              <li><a href="single-post.html"><i class="bi bi-chevron-right"></i> Farmacias Cercanas</a></li>
+              <li><a href="category.html"><i class="bi bi-chevron-right"></i> Ayuda para Fumadores</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h3 class="footer-heading">Contacta con Nosotros</h3>
+            <p>Email: feeling@care.com</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/vendor/swiper/swiper-bundle.min.js}"></script>
+  <script th:src="@{/vendor/glightbox/js/glightbox.min.js}"></script>
+  <script th:src="@{/vendor/aos/aos.js}"></script>
+  <script th:src="@{/vendor/php-email-form/validate.js}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
